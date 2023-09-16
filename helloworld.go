@@ -2,7 +2,15 @@ package main
 
 import "fmt"
 
+type Person struct {
+	name   string
+	age    int
+	job    string
+	salary int
+}
+
 func main() {
+
 	fmt.Println("Hello world")
 	var name string = "I am a string"
 	fmt.Println(name)
@@ -18,6 +26,22 @@ func main() {
 	fmt.Println(g, x)
 	rescursionCount(1)
 	fmt.Println(FactorialRecursion(4))
+	var pers Person
+	initStruct(&pers)
+}
+
+func initStruct(pers *Person) {
+
+	pers.name = "Cameron"
+	pers.age = 25
+	pers.job = "Developer"
+	pers.salary = 0
+
+	fmt.Println("Name: ", pers.name)
+	fmt.Println("Age: ", pers.age)
+	fmt.Println("Job: ", pers.job)
+	fmt.Println("Salary: ", pers.salary)
+
 }
 
 func FactorialRecursion(j float64) (y float64) {
