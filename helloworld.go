@@ -14,6 +14,24 @@ func main() {
 	sliceFromArray(array)
 	mySlices()
 	copyArray()
+	g, x := returnTwo(5, "Hello")
+	fmt.Println(g, x)
+	rescursionCount(1)
+}
+
+func rescursionCount(num int) int {
+	if num == 11 {
+		return 0
+	}
+	fmt.Println(num)
+	return rescursionCount(num + 1)
+}
+
+func returnTwo(g int, x string) (result int, txt1 string) {
+
+	result = g + g
+	txt1 = x + "World!"
+	return
 }
 
 func copyArray() {
