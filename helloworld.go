@@ -10,8 +10,16 @@ func main() {
 	const b int = 2
 	const c int = 3
 	myNums(a, b, c)
-	myArray()
+	var array [4]string = myArray()
+	sliceFromArray(array)
 	mySlices()
+}
+
+func sliceFromArray(array [4]string) {
+	mySlice := array[1:3]
+	fmt.Printf("mySlice = %v\n", mySlice)
+	fmt.Printf("length = %d\n", len(mySlice))
+	fmt.Printf("capacity = %d\n", cap(mySlice))
 }
 
 func mySlices() {
@@ -24,7 +32,7 @@ func mySlices() {
 	fmt.Println(powerslice)
 }
 
-func myArray() {
+func myArray() [4]string {
 	var array1 = [3]int{1, 2, 3}
 	array2 := [5]int{4, 5, 6, 7, 8}
 	var cars = [4]string{"Volvo", "BMW", "Ford", "Mazda"}
@@ -41,6 +49,8 @@ func myArray() {
 	fmt.Println(InitArrayIndex)
 	//printing length
 	fmt.Println(len(UninitArray))
+
+	return cars
 }
 
 func myNums(a int, b int, c int) {
