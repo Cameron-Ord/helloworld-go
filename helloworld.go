@@ -17,6 +17,16 @@ func main() {
 	g, x := returnTwo(5, "Hello")
 	fmt.Println(g, x)
 	rescursionCount(1)
+	fmt.Println(FactorialRecursion(4))
+}
+
+func FactorialRecursion(j float64) (y float64) {
+	if j > 0 {
+		y = j * FactorialRecursion(j-1)
+	} else {
+		y = 1
+	}
+	return
 }
 
 func rescursionCount(num int) int {
